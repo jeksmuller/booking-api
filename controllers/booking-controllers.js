@@ -11,18 +11,13 @@ export const getOneBooking = (req, res, next) => {
 }
 
 export const postBooking = async (req, res, next) => {
-  try {
-      const newBooking =  new booking()
+      const newBooking =  new booking(req.body)
+       const bookings = await newBooking.save()
   
-       const Booking = await newBooking.save(req.body)
-  
-      res.status(201).json(Booking);
-  } catch (error) {
-    next(error)
-    
+      res.status(201).json(bookings);
   }
-}
-
+    
+    
 export const updateBooking = (req, res, next) => {
     res.status(201).json('booking updated!');
 }

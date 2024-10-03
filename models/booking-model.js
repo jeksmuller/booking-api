@@ -25,7 +25,7 @@ const bookingSchema = new Schema({
 
     seatNumber : {
         type: Number,
-        unique: true,
+        // unique: true,
         // required: true
     },
 
@@ -33,7 +33,7 @@ const bookingSchema = new Schema({
 
     email : {
         type: String,
-        unique: true,
+        // unique: true,
         // required: true
     },
 
